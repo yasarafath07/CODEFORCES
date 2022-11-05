@@ -1,0 +1,73 @@
+
+/***************************  CODEFORCES *************************/
+// Problem: D. Array Division
+
+#include<iostream>
+#include<vector>
+#include<map>
+#include<unordered_map>
+
+using namespace std;
+
+int main(){
+    int n;   // size of the Array
+    cin>>n;
+    vector<int> A(n+5, 0);  // maintain a vector 'A' of size n+5 and initialize it with all zeroe's.
+
+    //calculating total sum of the Array
+    long long S = 0;    // using long long so that we can avoid any overflow
+
+    // taking the input for the Array elements
+    for(int i=0; i<n; i++){
+        cin>>A[i];
+        S += A[i];  // S = S + A[i]
+    }
+
+    if(S & 1){  // which means the no is odd
+        cout<<"NO\n";  // means if the number was odd we can print NO because the answer wont exist
+        return 0 ;
+    }
+
+    // checking if we can divide the array into 2 parts
+    unordered_map<long long, int> first, second;
+
+    first[A[0]] = 1;  // Inserting 1st element of the Array in 1st map
+
+    // Inserting the remaining elements of the Array from index 1 to index n-1 in the 2nd map
+    for(int i=1; i<n; i++){
+        second[A[i]]++;
+    }
+    // now let's say we are at position i, and the sum is S_dash
+    long long S_dash = 0;
+
+    // iterating on all the possible prefixes
+    for(int i=0; i<n; i++){
+        S_dash += A[i];  // sum of first i numbers
+        if(S_dash == S/2){
+            cout<<"YES\n";
+            return 0;
+        }
+        if(S_dash < S/2){
+            long long x = S/2 - S_dash;
+            //delete element from 2nd half, and insert into 1st half
+            if(second[x] > 0){
+                cout<<"YES\n";
+                return 0;
+            }
+        }
+        // if S_dash > S/2
+        else{   
+            long long y = S_dash - S/2;
+            // delete element from 1st part and insert it into 2nd part
+            if(first[y] > 0){
+                cout<<"YES\n";
+                return 0;
+            }
+        }
+        // now, we are basically moving to i+1 and i+1 has to be deleted from 2nd map and inserted into 1st map
+        first[A[i+1]]++;  // inserting i+1 into 1st map
+        second[A[i+1]]--; // deleting i+1 from 2nd map
+    }
+    cout<<"NO\n";
+
+}
