@@ -1,0 +1,48 @@
+#include<iostream>
+#include<vector>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int t;   // t is our test input
+    cin>>t;
+    long long n;
+    long long N;
+    int counter = 0;
+
+    while(t--){
+        cin>>n;  // input the number
+        N = n; // copy of the same number
+        counter = 0;
+        vector<long long>arr;
+
+        for(int i=2; i*i<=N; i++){  // looping till the square root of the number
+            // if we find a number which divides n, we found one of 3 distinct integers. So, we add it to the vector
+            if(n%i == 0){
+                counter++;
+                n = n/i;
+                arr.push_back(i);
+            }
+            // if counter=2, means we have found 2 distinct integers by dividing n, so the 3rd integer will be definitely n after dividing 2 times
+            if(counter == 2){
+                arr.push_back(n);
+                break;
+            }
+        }
+        // if less than 2 distinct integers are found, print "NO"
+        if(counter < 2){
+            cout<<"NO"<<endl;
+        }
+        // if any 2 of the distinct integers are same, print "NO"
+        else if(arr[0] == arr[2] || arr[1] == arr[2]){
+            cout<<"NO"<<endl;
+        }
+        else{
+            cout<<"YES"<<endl;
+            // print the 3 distinct integers
+            cout<<arr[0]<<" "<<arr[1]<<" "<<arr[2]<<endl;
+        }
+    }
+    return 0;
+}
