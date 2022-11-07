@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;
+    int arr[10000];
+    int k;
+    int counter = 0;
+
+    // take the input for n and k from the user
+    cin>>n>>k;
+
+    // input the scores of the participants from the user
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    // Now, traverse the Array and check if the value at kth position in the array is >= to the elements of the array
+    // Also they given the array should contain positive scores, we also check if the array values are greater than 0
+    for(int i=0; i<n; i++){
+        if(arr[i] >= arr[k-1] && arr[i] > 0){   // k-1 since our array is 0 indexed
+            counter++;
+        }
+    }
+    // print the answer
+    cout<<counter<<endl;
+}
+
