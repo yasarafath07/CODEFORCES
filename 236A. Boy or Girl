@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    string s;
+    cin>>s;
+
+    // create a map to store the frequency of characters of the string
+    unordered_map<char, int> mpp;
+
+    for(auto it : s){
+        mpp[it]++;  // store the frequency of each character in the map
+    }
+    
+    // size of the map will give total no. of distinct characters
+    // So, if the size of the map is even, then the string is the name of a female. So, print "CHAT WITH HER!"
+    // else if it is a male, we print "IGNORE HIM!"
+    if(mpp.size() % 2 == 0){
+        cout<<"CHAT WITH HER!"<<endl;
+    }
+    else{
+        cout<<"IGNORE HIM!"<<endl;
+    }
+
+    return 0;
+}
