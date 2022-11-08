@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;  // no. of problems in the contest
+    cin>>n;  // take the input from the user
+    int arr[n]; // create a array of size n
+    
+    // Traverse through the array and for each index of the array, take 3 inputs either 0 or 1. and insert the sum of these 3 in the 
+    // 'i'th position of the array
+    for(int i=0; i<n; i++){
+        int x, y, z;
+        cin>>x>>y>>z;
+        arr[i] = x+y+z;
+    }
+  
+    int ans = 0;
+    // Now, check if the value at 'i'th position is >=2, means atleast 2 persons are aware about the solution. So we know the answer
+    // for that question. So, we do ans++
+    for(int i=0; i<n; i++){
+        if(arr[i] >= 2){
+            ans++;
+        }
+    }
+    cout<<ans<<endl;
+}
