@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    // Aproach: Using SET Data Structure 
+    // SET only stores unique Elements
+    set<int> set;
+    int n = 4; // given there are total 4 horseshoes
+    int k; // k represents single horseshoe
+
+    while(n--){
+        cin>>k;  // take the value of k from the user
+
+        // Now, insert the value of k in the set
+        set.insert(k);
+    }
+    int ans = 4 - set.size();  // (4 - size of set) is the no. of horseshoes we need to buy so that all the horseshoes are unique
+    cout<<ans<<endl;
+    return 0;
+}
