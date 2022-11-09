@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void solve(){
+    int n; // size of the permutation
+    cin>>n; // take the input from the user
+
+    // If 'n' is a odd number, then is doesn't have a perfect permutation. So we print -1
+    if(n%2 != 0){
+        cout<<"-1"<<endl;
+    }
+    else{
+        // create an array of size n+1
+        int arr[n+1];
+        // Assign the Index of the Array as the Elements of the array
+        for(int i=1; i<=n; i++){
+            arr[i] = i; // Index of the Array represents array elements
+        }
+        // Now, we have even no.of elements in the Array, we swap the adjacent elements to make n as a perpfect permutation
+        for(int i=1; i<=n-1; i++){
+            swap(arr[i], arr[i+1]);
+            i++;  // We increment twice so that adjacent elements are swapped
+        }
+        // Now, print the elements till n
+        for(int i=1; i<=n; i++){
+            cout<<arr[i]<<" ";
+        }
+    }
+}
+
+int main(){
+    int t = 1;
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
