@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define for(i, a1, b1) for(int i=a1; i<=b1; i++)
+
+using namespace std;
+
+// Given Equations are (a^2 + b) = n and (a + b^2) = m, where 'n' and 'm' are the inputs from the user
+// So, we need to find the values of a and b that satisfy both the conditions and we need to print total how many pairs of (a,b) are present
+// for the given value of n and m
+
+int main(){
+    int n, m;
+    cin>>n>>m;
+    int b;
+    int count = 0;  // to store the total no. of pairs of a and b that will satisfy the condition
+
+    // Now, lets say if b=0 in 1st equation, then a = square root(n) 
+    // So, for the 1st eqn, the value of a lies from 0 till square root(n)
+    // So, we run a loop for a and check if the value of b exists or not
+    for(a, 0, sqrt(n)){ // i.e for a from 0 till sqrt(n)
+        // find the value of b
+        b = n - (a*a);  // form eqn 1
+        // Now, check if this value of b satisfies the 2nd eqn
+        if(a + (b*b) == m){
+            // means we got a pair, so increment the count
+            count++;
+        }
+    }
+    cout<<count<<endl;
+
+    return 0;
+}
