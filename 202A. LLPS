@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    string str; // Input string
+    cin>>str;  // Take input string from the user
+
+    int n = str.length();
+
+    char curr = 0;
+
+    for(int i=0; i<n; i++){
+        // If current character is greater than the previous character, update it
+        if(str[i] > curr){
+            curr = str[i];
+        }
+    }
+    // After the above for loop, we will be having the largest character from the string in the 'curr' variable.
+    // Now, count the no. of occurences of the largest character in the given string
+
+    int count = 0;
+    for(int i=0; i<n; i++){
+        if(str[i] == curr){
+            count++;
+        }
+    }
+    // After the above for loop, we will be knowing how many times the largest character will be appearing in the input string.
+    // So, we will print the largest character 'count' no. of times as the output
+    while(count--){
+        cout<<curr;
+    }
+
+    return 0;
+}
