@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// CC-NS
+
+// What is  Permutation of length n?
+// It is an Array of size n means there are n elements in it and it has all the elements from 1 to n exactly once in it. and it's position 
+// can be anything.
+/*eg: [2,3,1,5,4] is a permutation of size 5. but [1,2,2] is not a permutation since 2 is repeated.
+Similarly, [1,2,3,4,6] is not a permutation since here n = 5 and there is 6 in the array.
+ */ 
+
+int main(){
+    int t; // no. of test cases
+    cin>>t;
+
+    while(t--){
+        int n, a, b;
+        cin>>n>>a>>b;
+
+        if(a == n && b == n){
+            cout<<"YES"<<endl;
+        }
+        else if(a+b < n-1){
+            cout<<"YES"<<endl;
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
+    }
+    return 0;
+}
