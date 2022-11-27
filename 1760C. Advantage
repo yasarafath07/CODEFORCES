@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main(){
+    int t; // no. of test cases
+    cin>>t;
+
+    while(t--){
+        int n; // size of the array
+        cin>>n;
+        
+        vector<ll> arr(n);
+
+        for(int i=0; i<n; i++){
+            cin>>arr[i];  // take elements for the array from the user
+        }
+        // since we need to find the strongest participant, let's sort the array
+        vector<ll> nums = arr;
+        sort(arr.begin(), arr.end());
+
+        ll maxi = arr[n-1];
+        ll maxi2 = arr[n-2];
+
+        for(int i=0; i<n; i++){
+            if(nums[i] == maxi){
+                cout<<maxi - maxi2<<" ";
+            }
+            else{
+                cout<<nums[i] - maxi<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    
+}
