@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t; // no. of test cases
+    cin>>t;
+
+    while(t--){
+        int a, b , c;
+        cin>>a>>b>>c;
+
+        vector<int> v;
+        // push a, b, c into the vector
+        v.push_back(a);
+        v.push_back(b);
+        v.push_back(c);
+        
+        // sort the vector
+        sort(v.begin(), v.end());
+
+        // now since only 3 elements will be there in the vector (a,b,c), the median will be the 2nd element which is v[1]. So, print it
+        int ans = v[1];
+
+        cout<<ans<<endl;
+    }
+}
