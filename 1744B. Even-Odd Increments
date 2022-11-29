@@ -1,0 +1,87 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//#define int long long  
+// wherever we enter int, it'll be considered as long long
+//#define mod 1000000007
+//#define double long double
+
+int main(){
+    long long t; // no. of test cases
+    cin>>t;
+
+    while(t--){
+        long long n; // length of the array
+        cin>>n;
+        long long q; // no. of queries
+        cin>>q;
+
+        long long arr[n]; // array of size n
+        long long cntO = 0; // count of odd elements
+        long long cntE = 0; // count of even elements
+        long long sumO = 0; // sum of odd elements
+        long long sumE = 0; // sum of even elements
+
+        // take the array elements from the user
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
+
+            // check if the elemet is odd or even
+            if(arr[i] % 2){
+                // i.e if(arr[i] % 2 != 0), means if the element is odd
+                cntO++; // increment the count of odd
+                sumO += arr[i]; // add the element to the current sum of odd elements
+            }
+            else{
+                // if the array element is even
+                cntE++; // increment the even count
+                sumE += arr[i]; // add the element to the sum of even elements
+            }
+        }
+
+        // Time to process the queries 'q'
+        while(q--){
+            // each query 'q' has 2 things: a query type (type) and a value (val)
+            int type; // type of the query i.e, either 0 or 1
+            cin>>type;
+            int val; // the value we need to add to the element of the array according to if the element is odd or even
+            cin>>val;
+
+            // check if the query is of type 0 or type 1
+            if(type){
+                // means the query is 1, so add val to all the odd elements
+
+                // check if val is even or odd
+                // if val is even and we are adding it to all odd elements of the array, then there is no issue
+                if(val % 2 == 0){
+                    // means if val is even
+                    // so, if val is even and we are adding val to odd elements, then the resulting new element will also be odd only
+                    sumO += (cntO*val); // add val to all the odd elements of the array and calculate the total sum of odd elements
+                }
+                else{
+                    //if val is odd and type is already 1, so we need to add val to odd elements which will result in new elements which are even
+                    // so we need to parallelly update the count and sum of odd elements also
+                    sumE += (sumO + cntO*val);
+                    cntE += cntO; // since now all the odd elements will become even since we are adding odd val to odd element
+                    cntO = 0; // since all elements becomes even, count of odd will be 0
+                    sumO = 0;
+                }
+            }
+            else{
+                // if query is 0, then add val to all the even elements
+                // if val is even and we are adding val to even elements, then there will be no issue
+                if(val % 2 == 0){
+                    sumE += (cntE*val);
+                }
+                else{
+                    // if val is odd, then adding odd value to even elements will result in new odd elements
+                    sumO += (sumE + cntE*val);
+                    cntO += cntE;
+                    cntE = 0;
+                    sumE = 0;
+                }
+            }
+            cout<<sumO + sumE <<endl; // print the total sum
+        }
+    }
+}
