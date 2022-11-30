@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+
+int main(){
+    long long t;
+    cin>>t;
+
+    while(t--){
+        long long l, r;
+        cin>>l>>r;
+
+        if((long long)2*l <= r){
+            // if(2*l <= r), we have an answer
+            cout<<l<<" "<<((long long)2*l)<<endl; // (long long) is typecasting for int 2 since l and r are taken as long long
+        }
+        else{
+            cout<<-1<<" "<<-1<<endl;
+        }
+    }
+}
