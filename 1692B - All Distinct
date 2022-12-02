@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        int n; // length of the array
+        cin>>n;
+
+        int arr[n]; // array of size n
+
+        // create a set
+        set<int> st;
+
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
+            st.insert(arr[i]); // insert each element of the array into the set
+        }
+
+        int s = st.size(); // size of the set
+        // n = arr.size();
+
+        int ans = n - s;
+
+        // if the difference is even, then our answer is size of the set
+        // if the difference is odd, then our ans is size of set minus 1
+        if(ans % 2 == 0){
+            // if the difference is even, print size of the set which will be the max length of the final array
+            cout<<st.size()<<endl;
+        }
+        else{
+            // if the difference is odd, then print set size minus 1
+            cout<<st.size()-1<<endl;
+        }
+    }
+}
+
+
+
+/*
+// ALGORITHM:
+- Input n which is the size of the Array
+- input Array elements
+- Craete a set and Insert all the elements of the array into the set
+- Find the size of the set (s)
+- Find the difference between original length of the Array and the length of the set and store it in a variable let's say 'ans'
+- If that difference is even, then our answer is the size of the set. So, we print st.size() as our final answer
+- If the difference is odd, then "st.size()-1" is our answer. So, we print it.
+*/
