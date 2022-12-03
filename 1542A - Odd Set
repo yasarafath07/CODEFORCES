@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define printY cout<<"YES"<<endl
+#define printN cout<<"NO"<<endl
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        int n; // the number of integers
+        cin>>n;
+
+        int arr[2*n]; // array of size 2n
+
+        for(int i=0; i<2*n; i++){
+            cin>>arr[i];
+        }
+
+        int even = 0;
+        int odd = 0;
+
+        for(int i=0; i<2*n; i++){
+            // count the total number of even numbers and odd numbers in the array
+            if(arr[i] % 2 == 0){
+                even++;
+            }
+            else{
+                odd++;
+            }
+        }
+
+        // if there are equal number of both odd and even elements, then only we can make n such pairs whose sum is odd
+        if(even == n && odd == n){
+            printY;
+        }
+        else{
+            printN;
+        }
+    }
+}
