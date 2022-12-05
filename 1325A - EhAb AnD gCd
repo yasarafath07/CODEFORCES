@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    cin.tie(0)->sync_with_stdio(0);
+
+    int t;
+    cin>>t;
+
+    while(t--){
+        int x;
+        cin>>x;
+
+        // gcd(a,b) is the greatest integer that both divides a and b
+        // lcm(a,b) is the smallest integer such that both a and b divide it
+
+        // some properties of gcd and lcm
+        // gcd(1,y) = 1 and lcm(1,y) = y
+
+        cout<<1<<" "<<x-1<<endl; // "1" & "x-1" are the 2 integers such that sum of their gcd() and lcm() equals 'x'
+    }
+}
