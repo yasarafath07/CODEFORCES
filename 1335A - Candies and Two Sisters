@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        int n; // number of candies
+        cin>>n;
+        
+        // if n==0 OR n==1 OR n==2, then we can't distribute 'a' candies to 1st sister and 'b' candies to 2nd sister such that a>b
+        if(n == 0 || n == 1 || n == 2){
+            cout<<0<<endl; 
+        }
+
+        else{
+            int ans = (n-1)/2;
+            cout<<ans<<endl;
+        }
+    }
+}
+
+/*
+eg1: For n=2, we can't distribute to 2 sisters (print 0)
+eg2: For n=3, we can distribute 2 candies (a) to sister1 and 1 candies (b) to sister 2. So, here a>b. So when n=3, we have 1 way (print 1)
+eg3: For n=4, we have a=3 (for sister 1) and b=1 (for sister 2). So, 1 way (print 1)
+eg4: For n=5, we have a=4 (for sister 1) and b=1 (for sister 2) which is 1st way and the 2nd way is a=3 and b=2 (so, print 2)
+*/
