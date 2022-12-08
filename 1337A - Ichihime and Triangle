@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        int a, b, c, d;
+        cin>>a>>b>>c>>d;
+
+        cout<<b<<" "<<c<<" "<<c<<endl; // x = b, y = c and z = c
+    }
+}
+
+
+
+/*
+// EXPLANATION:
+- Since it is said that x,y and z are sides of a triangle, we can say that sum of 2 sides of a trianle is >= third side.
+- Therefore: x + y >= z
+             x + z >= y
+             y + z >= x
+
+*/
