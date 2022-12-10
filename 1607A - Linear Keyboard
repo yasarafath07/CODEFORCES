@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        string str; // keyboard - a string of length 26
+        cin>>str;
+
+        long long a[26]; // array of size 26
+
+        for(int i=0; i<str.size(); i++){
+            a[str[i] - 'a'] = i; 
+        }
+
+        string s; // the word 
+        cin>>s;
+
+        long long sum = 0;
+
+        for(int i=1; i<s.size(); i++){
+            sum += abs(a[s[i] - 'a'] - a[s[i-1] - 'a']);
+        }
+
+        cout<<sum<<endl;
+
+    }
+}
