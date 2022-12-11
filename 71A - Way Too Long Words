@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n; // number of test cases
+    cin>>n;
+
+    while(n--){
+        string s;
+        cin>>s;
+
+        int len = s.size();
+
+        // if the size of the string is greater than 10, then replace the string with a special abbreviation
+        if(len > 10){
+            string ans = s[0] + to_string(len - 2) + s[len-1];
+            cout<<ans<<endl;
+        }
+        else{
+            // print the input string as it is
+            cout<<s<<endl;
+        }
+    }
+    return 0;
+}
