@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int m, n; // rectangular board of m cross n squares
+    cin>>m>>n;
+
+    // find the area of the rectangular board
+    int area = m * n;
+    
+    // it is given that each domino piece is of size 2 by 1. So, the area of domino piece is 2*1 i.e, 2.
+    // So, total area of the rectangular board divide by the area of the domino piece will give us the answer
+    int ans = area / 2; // 2 is the area of the domino piece
+
+    // print the answer
+    cout<<ans<<endl;
+
+    return 0;
+}
