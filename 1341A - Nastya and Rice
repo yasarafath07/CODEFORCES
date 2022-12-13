@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        int n; // no. of grains
+        cin>>n;
+
+        int a, b, c, d;
+        cin>>a>>b>>c>>d;
+
+        int x1 = n * (a-b); // total minimum weight of the whole rice package
+        int x2 = n * (a+b); // total maximum weight of the whole rice package
+
+        int x3 = (c-d); // minimum weight of the whole package
+        int x4 = (c+d); // maximum weight of the whole package
+
+        if(x4 < x1 || x2 < x3){
+            cout<<"No"<<endl;
+        }
+        else{
+            cout<<"Yes"<<endl;
+        }
+    }
+    return 0;
+}
