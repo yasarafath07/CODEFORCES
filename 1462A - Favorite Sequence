@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        int n; // length of the Array
+        cin>>n;
+
+        vector<int> arr(n); // Array of length n OR int "arr[n];"
+
+        // input the Array elements
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
+        }
+
+        // use 2 POINTERS: Here we need to first print the 1st element of the Array, then the last element and then the 2nd element of the 
+        // array and then the 2nd last and so on until all the elements are printed.
+        int j = 0;
+
+        // tarverse the Array
+        for(int i=0; i<n; i++){
+            if(i%2 == 0){
+                cout<<arr[j]<<" ";
+                // continue; // skip one more element i.e of odd index
+            }
+            else{
+                cout<<arr[n-j-1]<<" ";
+                j++;
+            }
+        }
+    }
+}
