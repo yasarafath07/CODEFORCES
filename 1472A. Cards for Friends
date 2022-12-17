@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void solve(){
+    long long w, h, n; // w - width of the sheet, h - height of the sheet, n - no. of friend,
+    cin>>w>>h>>n;
+
+    long long total = 1;
+
+    while(w%2 == 0){
+        total *= 2; // because at every step we divide the sheet into 2. So, it doubles
+        w /= 2; // w = w/2
+    }
+
+    while(h%2 == 0){
+        total *= 2;
+        h /= 2;
+    }
+
+    if(total >= n) cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+}
+
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+    return 0;
+}
