@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    
+    int t;
+    cin>>t;
+
+    while(t--){
+        string b; // given string
+        cin>>b;
+
+        long long n = b.length(); // length of string 'b'
+
+        string res; // result string
+
+        // If we observe, the first 2 characters of input string 'b' will always be present in the resultant string 'res'
+        // So, we add the first 2 characters of string 'b' to string 'res'
+        res += b[0];
+        res += b[1];
+
+        // now run a loop from 4th character of string 'b' and add every alternate element into 'res' by incrementing by 2
+        for(int i=3; i<b.length(); i+=2){
+            // EDGE CASE: If length of string 'b' is 2, just print the string 'b' as it is
+            if(n == 2){
+                cout<<b<<endl;
+            }
+            else{
+                res += b[i];
+            }
+        }
+        cout<<res<<endl;
+    }
+
+    return 0;
+}
