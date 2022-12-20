@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int a, b, c; // no. of 1 minute songs (a), no. of 2 minute songs (b) and no. of 3 minute songs (c)
+    cin>>a>>b>>c;
+
+    int sum = a + (2*b) + (3*c); // total duration of all songs. a is 1 minute, b is 2 minute and c is 3 minute. So, sum is the total no of mins
+
+    if(sum % 2 == 0){
+        cout<<"0"<<endl;
+    }
+    else{
+        cout<<"1"<<endl;
+    }
+}
+
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
