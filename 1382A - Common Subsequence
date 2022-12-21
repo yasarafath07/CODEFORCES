@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n, m; // length of 2 Arrays
+    cin>>n>>m;
+
+    // declare 2 Arrays 'a' and 'b'
+    vector<int> a(n); // Array 'a' of length 'n'
+    vector<int> b(m); // Array 'b' of length 'm'
+
+    // declare 2 maps to store the frequency of elements of Array 'a' and Array 'b'
+    unordered_map<int,int> map1; // to store the frequency of elements of Array 'a'
+    unordered_map<int,int> map2; // to store the frequency of elements of Array 'b'
+
+    // take the Array elements for Array 'a' from the user and store the frequency of the element in the map parallelly
+    for(int i=0; i<n; i++){
+        cin>>a[i];
+        map1[a[i]]++;
+    }
+
+    // Similarly, take the Array elements for Array 'b' from the user and store the frequency of the element in the map2 parallelly
+    for(int i=0; i<m; i++){
+        cin>>b[i];
+        map2[b[i]]++;
+    }
+
+    int ans = -1;
+
+    // Traverse on map1
+    for(auto it : map1){
+        // check if the current element 'it' is present in map2 by checking it's frequency
+        if(map2[it.first] > 0){
+            ans = it.first;
+            break;
+        }
+    }
+
+    if(ans == -1){
+        cout<<"NO"<<endl;
+    }
+    else{
+        cout<<"YES"<<endl;
+        cout<<"1"<<" "<<ans<<endl;
+    }
+
+}
+
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
