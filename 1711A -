@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n; // length of the permutation
+    cin>>n;
+    
+    // Shift all elements to the left by 1 position. i.e,
+    // run a loop from 2 till 'n' and print all the index and at last print 1 so that the weight is minimized
+    // So, if n=5, then the output will be: 2, 3, 4, 5, 1 (here the index of 1st element will be 1. So only the 1st element 2 will be divided 
+    // by it's index 1. In rest of the cases, we have handled it to not to be able to divide the element with it's index)
+    for(int i=2; i<=n; i++){
+        cout<<i<<" ";
+    }
+    cout<<"1"<<endl;
+}
+
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
