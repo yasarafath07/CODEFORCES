@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    string s; // binary string consisting only 0's and 1's
+    cin>>s;
+
+    int zeros = 0;
+    int ones = 0;
+
+    // count the no. of zeroes and ones in the string
+    for(int i=0; i<s.size(); i++){
+        if(s[i] == '0'){
+            zeros++;
+        }
+        else{
+            ones++;
+        }
+    }
+
+    int moves = min(zeros, ones); // eg: s = "1011001" (DRY RUN)
+
+    if(moves % 2 != 0){
+        // if 'moves' is odd, then Alice will win. So print 'DA' (YES)
+        cout<<"DA"<<endl;
+    }
+    else{
+        cout<<"NET"<<endl;
+    }
+}
+
+
+int main(){
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
