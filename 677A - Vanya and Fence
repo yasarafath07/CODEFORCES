@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n, h; // no. of friends (n) and height of the fence (h)
+    cin>>n>>h;
+
+    vector<int> arr(n);
+
+    int count1 = 0;
+    int count2 = 0;
+
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    // traverse the Array
+    for(int i=0; i<n; i++){
+        // If the friend's height is lesser than or equal to the height of the fence 'h', then the width of the friend will be considered as 1
+        if(arr[i] <= h){
+            count1++; // width of the person will be considered as 1
+        }
+        else{
+            // If the friend's height is greater than height of fence, width of the friend/person will be considered as 2
+            count2 += 2; // count 2 = count2 + 2;
+        }
+    }
+
+    // print the total width we need
+    cout << (count1 + count2) << endl;
+}
+
+int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    // call the solve() function
+    solve();
+
+    return 0;
+}
