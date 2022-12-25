@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// void solve(){}
+
+int main(){
+    ios :: sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int n; 
+    cin>>n;
+
+    int k; // no. of subtractions
+    cin>>k;
+
+    while(k--){
+        // if the number 'n' is divisible by 10, then divide the number by 10
+        if(n%10 == 0){
+            // divide the number 'n' by 10
+            n /= 10; // n = n/10;
+        }
+        else{
+            // subtract 1 from n
+            n -= 1; // n = n-1
+        }
+    }
+    cout<<n<<endl;
+}
