@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n; // the no. of people who were asked to give their opinions
+    cin>>n;
+
+    vector<int> arr(n); // Array of length 'n'
+
+    for(int i=0; i<n; i++){
+        cin>>arr[i]; // Array elements can be either '0' (Easy) or '1' (Hard)
+    }
+
+    int zeros = 0;
+    int ones = 0;
+
+    // Traverse the Array
+    for(auto& it : arr){
+        if(it == 0){
+            zeros++;
+        }
+        else if(it == 1){
+            ones++;
+        }
+    }
+
+    if(ones > 0){
+        cout<<"HARD"<<endl;
+    }
+    else{
+        cout<<"EASY"<<endl;
+    }
+}
+
+
+int32_t main(){
+    ios :: sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    // call the solve() function
+    solve();
+
+    return 0;
+}
