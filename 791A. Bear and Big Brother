@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+/*
+void solve(){
+
+}
+*/
+
+
+int32_t main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int a, b; // weight of Limak and weight of bob
+    cin>>a>>b;
+
+    int years = 0;
+
+    while(a <= b){
+        years++;
+        a *= 3; // Limaks weight is tripled after every year
+        b *= 2; // Bob's weight is doubled after every year
+    }
+
+    // print the total no. of years required for Limak to beat bob
+    cout<<years<<endl;
+
+    return 0;
+}
