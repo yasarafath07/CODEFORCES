@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int n;
+    cin>>n;
+
+    // lucky no.'s last digit is either 4 or 7.
+    // Since n<=1000, we write all the combinations of 4 and 7 possible which is <= 1000
+    if(n%4 == 0 || n%7 == 0 || n%44 == 0 || n%47 == 0 || n%74 == 0 || n%77 == 0 || n%444 == 0 || n%447 == 0 || n%474 == 0 || n%477 == 0 || n%744 == 0 || n%774 == 0 || n%777 == 0){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
