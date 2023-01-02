@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int32_t main(){
+    ios :: sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int n1, n2, k1, k2; // 1st player has 'n1' balls in the box and 2nd player has 'n2' balls in his box
+    cin>>n1>>n2>>k1>>k2;
+
+    if(n2 >= n1){
+        cout<<"Second"<<endl;
+    }
+    else{
+        cout<<"First"<<endl;
+    }
+}
