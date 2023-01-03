@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+
+int32_t main(){
+    ios :: sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int len1, len2; // Size of 2 Arrays 
+    cin>>len1>>len2;
+
+    int k, m; // 'k' is the possible no's to choose from Array 'A' and 'm' is the possible numbers to choose from Array 'B'
+    cin>>k>>m; 
+
+    vector<int> A(len1); // Array 'A' of length 'len1'
+    vector<int> B(len2); // Array 'B' of length 'len2'
+
+    // i/p the Array elements for Array 'A'
+    for(int i=0; i<len1; i++){
+        cin>>A[i];
+    }
+
+    // i/p the Array elements for Array 'B'
+    for(int i=0; i<len2; i++){
+        cin>>B[i];
+    }
+
+    if(A[k-1] < B[len2 - m]){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
