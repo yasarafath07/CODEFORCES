@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n; // no. of trophies OR length of string 's'
+    cin>>n;
+
+    string s;
+    cin>>s;
+
+    // Traverse the string 's'
+    for(int i=0; i<s.length(); i++){
+        if(s[i] == 'R' && s[i+1] == 'L'){
+            // It already illuminates all the trophies. So, we don't really need to do anything. So, we return 0
+            cout<<0<<endl;
+            return;
+        }
+        else if(s[i] == 'L' && s[i+1] == 'R'){
+            // print the position we need to swap
+            cout<<i+1<<endl;
+            return;
+        }
+    }
+    cout<<-1<<endl;
+}
+
+
+int32_t main(){
+    ios :: sync_with_stdio(NULL);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
