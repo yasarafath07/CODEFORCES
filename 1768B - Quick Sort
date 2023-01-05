@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n; // length of the permutation 'p'
+    cin>>n;
+
+    int k; // no. of distinct elements we need to choose
+    cin>>k;
+
+    vector<int> arr(n);
+
+    // I/p the Array elements
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int ele = 1;
+
+    // Traverse the Array
+    for(int i=0; i<n; i++){
+        if(arr[i] == ele){
+            ele++;
+        }
+    }
+    
+    // Calculating Answer
+    int ans = (n - ele + k) / k; // 'ele' is the total no. of elements which are continuously sorted 
+    // So, (n - ele) is the remaining elements i.e, the elements which are not sorted
+
+    cout<<ans<<endl;
+}
+
+
+int32_t main(){
+    ios :: sync_with_stdio(NULL);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
