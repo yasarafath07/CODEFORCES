@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    long long n; // length of permutation
+    cin>>n;
+    long long k; // positive integer 'k'
+    cin>>k;
+
+    vector<long long> arr(n);
+
+    for(long long i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    long long count = 0; // count holds the no. of swaps we need to perform
+
+    // traverse the array from 'k' and check 
+    for(long long i=k; i<n; i++){
+        if(arr[i] <= k){
+            count++;
+        }
+    }
+
+    cout<<count<<endl;
+}
+
+
+int32_t main(){
+    ios :: sync_with_stdio(NULL);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    long long t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
