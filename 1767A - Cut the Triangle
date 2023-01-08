@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void solve(){
+    int a[3]; // 'x' coordinates of all 3 sides of the triangle i.e, x1, x2 and x3
+    int b[3]; // 'y' coordinates of all 3 sides of the triangle i.e, y1, y2 and y3
+
+    // input the triangle coordinates
+    for(int i=0; i<3; i++){
+        cin>>a[i];
+        cin>>b[i];
+    }
+
+    sort(a, a+3);
+    sort(b, b+3);
+
+    
+    // If x1, x2 and x3 are unique OR y1, y2 and y3 are unique, then we can cut the triangle
+    if(a[0] != a[1] && a[1] != a[2] || b[0] != b[1] && b[1] != b[2]){
+        cout<<"YES"<<endl; // we can cut
+    }
+    else{
+        // we cant cut the triangle
+        cout<<"NO"<<endl;
+    }
+}
+
+
+int32_t main(){
+    ios :: sync_with_stdio(NULL);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t;
+    cin>>t;
+    
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
