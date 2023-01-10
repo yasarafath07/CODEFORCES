@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(){
+    int n;
+    cin>>n;
+
+    vector<int> arr(n);
+
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    // if 1st and last elements are equal, then it is ugly
+    if(arr[0] == arr[n-1]){
+        cout<<"NO"<<endl;
+    }
+    else{
+        cout<<"YES"<<endl;
+        reverse(arr.begin()+1, arr.end()); // reverse from the 2nd element i.e from index 0
+        // Now, print the elements
+        for(int i=0; i<n; i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+
+int main(){
+    ios :: sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+    }
+
+    return 0;
+}
